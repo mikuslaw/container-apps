@@ -414,4 +414,15 @@
         "location": "https://hub.docker.com/_/postgres/", 
         "type": "docker"
     }
+    {
+        "description": "aOfficial PostgreSQL Docker image. The PostgreSQL object-relational database system provides reliability and data integrity.", 
+        "repository": "dockerhub", 
+        "arch": "amd64", 
+        "icon": "http://download.qnap.com/QPKG/images/QPKG/container/postgresql_icon.png", 
+        "displayName": "PostgreSQL", 
+        "name": "postgres", 
+        "version": "9.5", 
+        "location": "https://hub.docker.com/_/postgres/", 
+        "type": "docker"
+    }
 ]
