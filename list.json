@@ -418,7 +418,7 @@
         "description": "Official NextCloud Docker image.", 
         "repository": "dockerhub", 
         "arch": "amd64", 
-        "icon": "https://github.com/nextcloud/promo/blob/master/nextcloud-icon-square256.png", 
+        "icon": "https://github.com/nextcloud/promo/raw/master/nextcloud-icon-square256.png", 
         "displayName": "NextCloud", 
         "name": "nextcloud", 
         "version": "11.0.2", 
