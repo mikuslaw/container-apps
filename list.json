@@ -415,14 +415,14 @@
         "type": "docker"
     },
     {
-        "description": "aOfficial PostgreSQL Docker image. The PostgreSQL object-relational database system provides reliability and data integrity.", 
+        "description": "Official NextCloud Docker image.", 
         "repository": "dockerhub", 
         "arch": "amd64", 
-        "icon": "http://download.qnap.com/QPKG/images/QPKG/container/postgresql_icon.png", 
-        "displayName": "aPostgreSQL", 
-        "name": "apostgres", 
-        "version": "9.5", 
-        "location": "https://hub.docker.com/_/postgres/", 
-        "type": "docker"
+        "icon": "https://github.com/nextcloud/promo/blob/master/nextcloud-icon-square256.png", 
+        "displayName": "NextCloud", 
+        "name": "nextcloud", 
+        "version": "11.0.2", 
+        "location": "https://hub.docker.com/_/nextcloud/", 
+        "type": "app"
     }
 ]
