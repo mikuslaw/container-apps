@@ -413,7 +413,7 @@
         "version": "9.5", 
         "location": "https://hub.docker.com/_/postgres/", 
         "type": "docker"
-    }
+    },
     {
         "description": "aOfficial PostgreSQL Docker image. The PostgreSQL object-relational database system provides reliability and data integrity.", 
         "repository": "dockerhub", 
