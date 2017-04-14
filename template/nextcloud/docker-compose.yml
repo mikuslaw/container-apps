@@ -29,7 +29,7 @@ services:
     networks:
     - back
   db:
-    image: mysql
+    image: mysql:latest
     volumes:
       - ./mysql/runtime:/var/lib/mysql
     environment:
