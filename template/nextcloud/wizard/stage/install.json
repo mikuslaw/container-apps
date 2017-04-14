@@ -1,9 +1,9 @@
 {
   "api_version": "v1",
-  "title": "{{GITLAB_NAME}}",
+  "title": "{{NEXTCLOUD_NAME}}",
   "wizard": [
     {
-      "title": "{{GITLAB_CONFIGURE}}",
+      "title": "{{NEXTCLOUD_CONFIGURE}}",
       "schema": {
         "http_port": {
           "type": "integer",
