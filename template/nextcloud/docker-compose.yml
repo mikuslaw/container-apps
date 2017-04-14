@@ -14,7 +14,7 @@ services:
     volumes_from:
       - app
     environment:
-      - VIRTUAL_HOST
+      - VIRTUAL_HOST=test
     networks:
     - back
     - lb_web
@@ -33,7 +33,7 @@ services:
     volumes:
       - ./mysql/runtime:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD
+      - MYSQL_ROOT_PASSWORD=test
     networks:
     - back
   cron:
