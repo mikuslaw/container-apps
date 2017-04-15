@@ -29,10 +29,10 @@
     "data": {
       "http_port": [
         "gitlab.ports[0]",
-        "gitlab.environment.GITLAB_PORT"
+        "nextcloud.environment.NEXTCLOUD_PORT"
       ],
       "ssh_port": [
-        "gitlab.environment.GITLAB_SSH_PORT",
+        "nextcloud.environment.NEXTCLOUD_SSH_PORT",
         "gitlab.ports[1]"
       ]
     }
