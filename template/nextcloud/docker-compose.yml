@@ -1,4 +1,4 @@
-  web:
+web:
     image: nginx:latest
     restart: always
     volumes:
@@ -9,10 +9,7 @@
       - app
     environment:
       - VIRTUAL_HOST=test
-    networks:
-    - back
-    - lb_web
-  app:
+app:
     image: nextcloud:11-fpm
     restart: always
     links:
@@ -21,32 +18,10 @@
       - ./data/apps:/var/www/html/apps
       - ./data/config:/var/www/html/config
       - ./data/data:/var/www/html/data
-    networks:
-    - back
-  db:
+db:
     image: mysql:latest
     restart: always
     volumes:
       - ./mysql/runtime:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=test
-    networks:
-    - back
-  cron:
-    image: nextcloud:11-fpm
-    restart: always
-    links:
-      - db
-    volumes_from:
-      - app
-    user: www-data
-    entrypoint: |
-      bash -c 'bash -s <<EOF
-      trap "break;exit" SIGHUP SIGINT SIGTERM
-      while /bin/true; do
-        /usr/local/bin/php /var/www/html/cron.php
-        sleep 900
-      done
-      EOF'
-    networks:
-    - back
