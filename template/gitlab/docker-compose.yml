@@ -8,7 +8,8 @@ postgresql:
     - DB_EXTENSION=pg_trgm
     - PG_USER=docker
   volumes:
-  - /etc/passwd:/etc/passwd:ro
+    - /etc/passwd:/etc/passwd:ro
+    - /etc/group:/etc/group:ro
 gitlab:
   restart: always
   image: sameersbn/gitlab:8.9.6-1
@@ -25,7 +26,8 @@ gitlab:
     - GITLAB_SECRETS_DB_KEY_BASE=qcs-gitlab-app
     - GITLAB_USER=docker
   volumes:
-  - /etc/passwd:/etc/passwd:ro
+    - /etc/passwd:/etc/passwd:ro
+    - /etc/group:/etc/group:ro
 redis:
   restart: always
   image: sameersbn/redis:latest
@@ -34,4 +36,5 @@ redis:
   environment:
     - REDIS_USER=docker
   volumes:
-  - /etc/passwd:/etc/passwd:ro
+    - /etc/passwd:/etc/passwd:ro
+    - /etc/group:/etc/group:ro
