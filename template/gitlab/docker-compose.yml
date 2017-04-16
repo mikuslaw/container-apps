@@ -24,7 +24,8 @@ gitlab:
     - GITLAB_PORT=10080
     - GITLAB_SSH_PORT=10022
     - GITLAB_SECRETS_DB_KEY_BASE=qcs-gitlab-app
-    - GITLAB_USER=docker
+    - USERMAP_UID=1000
+    - USERMAP_GIT=100
   volumes:
     - /etc/passwd:/etc/passwd:ro
     - /etc/group:/etc/group:ro
