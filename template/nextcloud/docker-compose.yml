@@ -9,6 +9,7 @@ web:
       - app
     environment:
       - VIRTUAL_HOST=test
+      - NEXTCLOUD_SSH_PORT=10022
 app:
     image: nextcloud:11-fpm
     restart: always

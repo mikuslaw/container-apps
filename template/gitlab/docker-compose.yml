@@ -6,10 +6,8 @@ postgresql:
     - DB_PASS=password
     - DB_NAME=gitlabhq_production
     - DB_EXTENSION=pg_trgm
-    - PG_USER=docker
-  volumes:
-    - /etc/passwd:/etc/passwd:ro
-    - /etc/group:/etc/group:ro
+    - USERMAP_UID=1000
+    - USERMAP_GID=1000
 gitlab:
   restart: always
   image: sameersbn/gitlab:8.9.6-1
@@ -24,17 +22,15 @@ gitlab:
     - GITLAB_PORT=10080
     - GITLAB_SSH_PORT=10022
     - GITLAB_SECRETS_DB_KEY_BASE=qcs-gitlab-app
-    - GITLAB_USER=docker
-  volumes:
-    - /etc/passwd:/etc/passwd:ro
-    - /etc/group:/etc/group:ro
+    - GITLAB_USER=gitlab
+    - USERMAP_UID=1000
+    - USERMAP_GID=1000
 redis:
   restart: always
   image: sameersbn/redis:latest
   command:
     - --loglevel warning
   environment:
-    - REDIS_USER=docker
-  volumes:
-    - /etc/passwd:/etc/passwd:ro
-    - /etc/group:/etc/group:ro
+    - REDIS_USER=redis
+    - USERMAP_UID=1000
+    - USERMAP_GID=1000
