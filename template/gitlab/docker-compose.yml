@@ -1,6 +1,7 @@
 postgresql:
   restart: always
   image: sameersbn/postgresql:9.4-23
+  priviliged: true
   environment:
     - DB_USER=gitlab
     - DB_PASS=password
@@ -11,6 +12,7 @@ postgresql:
 gitlab:
   restart: always
   image: sameersbn/gitlab:8.9.6-1
+  priviliged: true
   links:
     - redis:redisio
     - postgresql:postgresql
@@ -27,6 +29,7 @@ gitlab:
 redis:
   restart: always
   image: sameersbn/redis:latest
+  priviliged: true
   command:
     - --loglevel warning
   environment:
