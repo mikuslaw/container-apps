@@ -11,7 +11,7 @@ postgresql:
     - USERMAP_GID=1000
 gitlab:
   restart: always
-  image: sameersbn/gitlab:8.9.6-1
+  image: sameersbn/gitlab:latest
   privileged: true
   links:
     - redis:redisio
