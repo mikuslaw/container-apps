@@ -1,11 +1,15 @@
 version: '2'
 
 volumes:
-  gitlab_data:
+  gitlab_home:
+  gitlab_var:
 services:
   postgresql:
     restart: always
     image: sameersbn/postgresql:9.4-23
+    volumes:
+      - gitlab_home:/home/git/data
+      - gitlab_var:/var/git/gitlab
     environment:
       - DB_USER=gitlab
       - DB_PASS=password
