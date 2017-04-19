@@ -1,36 +1,41 @@
-postgresql:
-  restart: always
-  image: sameersbn/postgresql:9.4-23
-  environment:
-    - DB_USER=gitlab
-    - DB_PASS=password
-    - DB_NAME=gitlabhq_production
-    - DB_EXTENSION=pg_trgm
-    - USERMAP_UID=1000
-    - USERMAP_GID=1000
-gitlab:
-  restart: always
-  image: sameersbn/gitlab:latest
-  links:
-    - redis:redisio
-    - postgresql:postgresql
-  ports:
-    - "10080:80"
-    - "10022:22"
-  environment:
-    - DEBUG=true
-    - GITLAB_PORT=10080
-    - GITLAB_SSH_PORT=10022
-    - GITLAB_SECRETS_DB_KEY_BASE=long-and-random-alpha-numeric-string
-    - GITLAB_SECRETS_SECRET_KEY_BASE=long-and-random-alpha-numeric-string
-    - GITLAB_SECRETS_OTP_KEY_BASE=long-and-random-alpha-numeric-string
-    - USERMAP_UID=1000
-    - USERMAP_GID=1000
-redis:
-  restart: always
-  image: sameersbn/redis:latest
-  command:
-    - --loglevel warning
-  environment:
-    - USERMAP_UID=1000
-    - USERMAP_GID=1000
+version: '2'
+
+volumes:
+  gitlab_data:
+services:
+  postgresql:
+    restart: always
+    image: sameersbn/postgresql:9.4-23
+    environment:
+      - DB_USER=gitlab
+      - DB_PASS=password
+      - DB_NAME=gitlabhq_production
+      - DB_EXTENSION=pg_trgm
+      - USERMAP_UID=1000
+      - USERMAP_GID=1000
+  gitlab:
+    restart: always
+    image: sameersbn/gitlab:latest
+    links:
+      - redis:redisio
+      - postgresql:postgresql
+    ports:
+      - "10080:80"
+      - "10022:22"
+    environment:
+      - DEBUG=true
+      - GITLAB_PORT=10080
+      - GITLAB_SSH_PORT=10022
+      - GITLAB_SECRETS_DB_KEY_BASE=long-and-random-alpha-numeric-string
+      - GITLAB_SECRETS_SECRET_KEY_BASE=long-and-random-alpha-numeric-string
+      - GITLAB_SECRETS_OTP_KEY_BASE=long-and-random-alpha-numeric-string
+      - USERMAP_UID=1000
+      - USERMAP_GID=1000
+  redis:
+    restart: always
+    image: sameersbn/redis:latest
+    command:
+      - --loglevel warning
+    environment:
+      - USERMAP_UID=1000
+      - USERMAP_GID=1000
