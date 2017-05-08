@@ -1,37 +1,10 @@
-postgresql:
-  restart: always
-  image: sameersbn/postgresql:9.4-23
-  privileged: true
-  environment:
-    - DB_USER=gitlab
-    - DB_PASS=password
-    - DB_NAME=gitlabhq_production
-    - DB_EXTENSION=pg_trgm
-    - USERMAP_UID=1000
-    - USERMAP_GID=1000
 gitlab:
   restart: always
-  image: sameersbn/gitlab:latest
-  privileged: true
-  links:
-    - redis:redisio
-    - postgresql:postgresql
+  image: gitlab/gitlab-ce:9.1.2-ce.0
   ports:
+    - "10443:443"
     - "10080:80"
     - "10022:22"
   environment:
-    - DEBUG=true
-    - GITLAB_PORT=10080
-    - GITLAB_SSH_PORT=10022
-    - GITLAB_SECRETS_DB_KEY_BASE=qcs-gitlab-app
-    - USERMAP_UID=1000
-    - USERMAP_GID=1000
-redis:
-  restart: always
-  image: sameersbn/redis:latest
-  privileged: true
-  command:
-    - --loglevel warning
-  environment:
-    - USERMAP_UID=1000
-    - USERMAP_GID=1000
+    - GITLAB_OMNIBUS_CONFIG: external_url 'https://gitlab.yourcompany.com'
+
