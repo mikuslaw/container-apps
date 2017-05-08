@@ -7,4 +7,3 @@ gitlab:
     - "10022:22"
   environment:
     - GITLAB_OMNIBUS_CONFIG: external_url 'https://gitlab.yourcompany.com'
-
