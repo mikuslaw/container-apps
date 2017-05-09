@@ -4,8 +4,8 @@
         "repository": "dockerhub",
         "arch": "amd64",
         "icon": "http://download.qnap.com/QPKG/images/QPKG/container/app_gitlab.png",
-        "displayName": "GitLabOfficial2",
-        "name": "gitlab2",
+        "displayName": "GitLabOfficial",
+        "name": "gitlab",
         "version": "9.1.2",
         "location": "https://hub.docker.com/r/gitlab/gitlab-ce",
         "type": "app"
