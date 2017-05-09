@@ -31,5 +31,16 @@
         "version": "11.0.2", 
         "location": "https://hub.docker.com/_/nextcloud/", 
         "type": "app"
+    },
+    {
+        "description": "WordPress is a rich content management system for creating blogs and websites with plugins, widgets, and themes.",
+        "repository": "dockerhub",
+        "arch": "amd64",
+        "icon": "http://download.qnap.com/QPKG/images/QPKG/container/app_wordpress.png",
+        "displayName": "WordPress",
+        "name": "wordpress",
+        "version": "4.7",
+        "location": "https://hub.docker.com/r/library/wordpress/",
+        "type": "app"
     }
 ]
