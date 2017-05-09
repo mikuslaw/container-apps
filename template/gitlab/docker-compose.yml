@@ -5,8 +5,6 @@ gitlab:
     - "10443:443"
     - "10080:80"
     - "10022:22"
-  environment:
-    - GITLAB_OMNIBUS_CONFIG: external_url 'https://gitlab.yourcompany.com'
   volumes:
     - /share/ContainerData/gitlab/data:/var/opt/gitlab
     - /share/ContainerData/gitlab/logs:/var/log/gitlab
