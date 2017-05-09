@@ -1,5 +1,0 @@
-wordpress:
-  image: wordpress:4.7
-  ports:
-    - "10084:80"
-
