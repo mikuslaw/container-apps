@@ -31,5 +31,16 @@
         "version": "11.0.2", 
         "location": "https://hub.docker.com/_/nextcloud/", 
         "type": "app"
+    },
+    {
+        "description": "Chromecast control over mqtt",
+        "repository": "dockerhub",
+        "arch": "amd64",
+        "icon": "https://upload.wikimedia.org/wikipedia/commons/2/26/Chromecast_cast_button_icon.svg",
+        "displayName": "ChromecastMqtt",
+        "name": "chromecast-mqtt",
+        "version": "1.0.0",
+        "location": "https://github.com/mikuslaw/docker-automatedbuild/blob/master/chromecast-mqtt/",
+        "type": "docker"
     }
 ]
